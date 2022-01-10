@@ -61,12 +61,26 @@ import fonctions
 ####################
 
 
-fonctions.calcul_age()
+# fonctions.calcul_age()
 
-while True:
-    personnes = input("Avez-vous une autre personne à inscrire ? y/n \n")
-    if personnes == "n":
-        break
-    else:
-        fonctions.calcul_age()
+# while True:
+#     personnes = input("Avez-vous une autre personne à inscrire ? y/n \n")
+#     if personnes == "n":
+#         break
+#     else:
+#         fonctions.calcul_age()
+
+import csv
+from datetime import date
+
+# with open(f'{date.today().year}-{date.today().month}-{date.today().day}.csv', 'a', newline='') as csvfile:
+#     spamwriter = csv.writer(csvfile, delimiter=' ')
+#     spamwriter.writerow(['Bonjour'] * 5 + ['Salut'])
+#     spamwriter.writerow(['Spam', 'Lovely Spam', 'Wonderful Spam'])
+
+
+####################
+#### EXERCICE 4 ####
+####################
+
 
