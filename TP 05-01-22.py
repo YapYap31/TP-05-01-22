@@ -46,6 +46,7 @@
 #### EXERCICE 2 ####
 ####################
 
+<<<<<<< Updated upstream
 util = int(input("Combien de personnes souhaitez-vous inscrire ? \n"))
 
 for i in range(util):
@@ -84,4 +85,19 @@ for i in range(util):
 
     print(f"Nom : {(nom)} ; Prénom : {(prenom)} ; Mail : {str.capitalize(prenom[0])}.{(nom)}@baton-rouge.fr")
     print("#####################")
+=======
+
+import fonctions
+
+util = int(input("Combien de personnes souhaitez-vous inscrire ? \n"))
+
+
+for i in range(util):
+    fonctions.calcul_age()
+    
+
+####################
+#### EXERCICE 3 ####
+####################
+>>>>>>> Stashed changes
 
