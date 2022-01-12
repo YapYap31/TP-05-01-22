@@ -1,3 +1,12 @@
+# import re (exo 1)
+import fonctions #(exo 2 et suivants)
+import csv #(exo 3)
+from datetime import date #(exo 3)
+import os #(exo 4)
+
+
+# EXO 2
+
 def calcul_age():
     while True:
         try:
@@ -12,35 +21,49 @@ def calcul_age():
                 print("Veuillez indiquer une année entre 1920 et 2020 !")
     if annee > 2022 - 6:
         print("#####################")
-        print("Vous n'êtes pas admis")
+        groupe = "Vous n'etes pas admis"
         print("#####################")
     elif annee > 2022 - 12:
         print("#####################")
-        print("Vous êtes catégorie : poussin")
+        groupe = "Vous etes poussin"
         print("#####################")
     elif annee > 2022 - 18:
         print("#####################")
-        print("Vous êtes catégorie : cadet")
+        groupe = "Vous etes cadet"
         print("#####################")
     elif annee > 2022 - 24:
         print("#####################")
-        print("Vous êtes catégorie : junior")
+        groupe = "Vous etes junior"
         print("#####################")
     elif annee > 2022 - 30:
         print("#####################")
-        print("Vous êtes catégorie : semi-pro")
+        groupe = "Vous etes semi-pro"
         print("#####################")
     elif annee >= 2022 - 40:
         print("#####################")
-        print("Vous êtes catégorie : pro")
+        groupe = "Vous etes pro"
         print("#####################")
     else:
         print("#####################")
-        print("Vous n'êtes pas admis")
+        groupe = "Vous n'etes pas admis"
         print("#####################")
 
     nom = input("Quel est votre nom ? \n")
     prenom = input("Quel est votre prénom ? \n")
+    mail = f'{str.capitalize(prenom[0])}.{(nom)}@baton-rouge.fr'
 
-    print(f"Nom : {(nom)} ; Prénom : {(prenom)} ; Mail : {str.capitalize(prenom[0])}.{(nom)}@baton-rouge.fr")
+    print(f'Catégorie : {(groupe)} ; Nom : {(nom)} ; Prénom : {(prenom)} ; Mail : {(mail)}')
     print("#####################")
+
+    return groupe, nom, prenom, mail
+
+# EXO 3
+
+def fichier_csv(groupe, nom, prenom, mail):
+    with open(f'inscrits-{date.today().year}-{date.today().month}-{date.today().day}.csv', 'a', newline='') as csvfile:
+        spamwriter = csv.writer(csvfile, delimiter=':')
+        spamwriter.writerow([f'{groupe}, {nom}, {prenom}, {mail}'])
+
+
+
+
